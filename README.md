@@ -23,6 +23,15 @@ Options:
 
 ## Comments
 
+0. Copy .env.sample to .env and complete it by entering required values as follows.
+```
+# auth0 tenant (ex. my-tenant.au.auth0.com)
+AUTH0_DOMAIN=
+
+# credentials for M2M app with scope delete:<users|clients|resource_servers|device_credentials|client_grants|connections>
+AUTH0_CLIENT_ID=
+AUTH0_CLIENT_SECRET=
+```
 1. IDs for entities to be deleted must be provided in `entity_ids.delete` file.
 2. Type of the entity to be deleted must be provided as `mode` cli argument (this is the only *REQUIRED* arg).
 3. Provide values for `concurrent` and `delay` args suitable to rate-limits on your tenant.
