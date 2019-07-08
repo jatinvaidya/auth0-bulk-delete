@@ -1,0 +1,21 @@
+{
+  "name": "auth0-bulk-delete",
+  "version": "1.0.0",
+  "description": "bulk delete for users/clients/resource-servers/client-grants/device-credentials/connections",
+  "main": "bulk-delete.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jatin Vaidya",
+  "license": "ISC",
+  "dependencies": {
+    "bottleneck": "^2.19.1",
+    "dotenv": "^8.0.0",
+    "node-input-validator": "^3.4.1",
+    "os": "^0.1.1",
+    "prompt-promise": "^1.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "yargs": "^13.2.4"
+  }
+}
