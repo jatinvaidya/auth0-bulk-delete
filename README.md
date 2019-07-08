@@ -1,4 +1,4 @@
-# auth0-bulk-delete
+# Node script for bulk-delete
 Bulk delete for users/clients/resource-servers/client-grants/device-credentials/connections
 
 <strong>--- H A N D L E - W I T H - C A R E ! ---</strong>
