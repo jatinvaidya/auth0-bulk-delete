@@ -114,6 +114,7 @@ let readEntityIdsToBeDeleted = () => {
 // actual work
 let bulkDelete = (entityIdArray, accessToken) => {
     let options = {
+        method: 'delete',
         auth: { 'bearer': accessToken }, 
         resolveWithFullResponse: true
     };
@@ -131,7 +132,7 @@ let bulkDelete = (entityIdArray, accessToken) => {
 // write to csv-file
 let logToFileAsPromised = (path, data) => {
     return new Promise((resolve, reject) => {
-        fs.appendFile(path, data + os.EOL, (error) => {
+        fs.appendFile(path, data + os.EOL, {flag: 'w'}, (error) => {
             if (error) reject(error);
             else resolve();
         });
@@ -181,9 +182,7 @@ let main = async () => {
     // 0-validate input args
     inputValidator();
 
-    // 1-truncate failure log file
-    await truncateFileAsPromised(FAILURE_LOG);
-    await logToFileAsPromised(FAILURE_LOG, MODE);
+    await logToFileAsPromised(FAILURE_LOG, `# Failed ${MODE} deletion (if any) will be recoded below:`);
 
     // 2-acquire mgmt api access_token
     let accessTokenPromise = acquireAccessToken();
